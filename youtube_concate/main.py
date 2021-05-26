@@ -5,6 +5,7 @@ from youtube_concate.pipeline.steps.download_captions import DownloadCaptions
 from youtube_concate.pipeline.steps.read_caption import ReadCaption
 from youtube_concate.pipeline.steps.search import Search
 from youtube_concate.pipeline.steps.download_videos import DownloadVidoes
+from youtube_concate.pipeline.steps.edit_video import EditVideo
 from youtube_concate.pipeline.steps.postflight import Postflight
 from youtube_concate.pipeline.steps.step import StepException
 from youtube_concate.pipeline.pipeline import Pipeline
@@ -20,6 +21,7 @@ def main():
     inputs = {
         'channel_id': CHANNEL_ID,
         'search_word': 'data',
+        'limit': 20,
     }
 
     steps = [
@@ -30,6 +32,7 @@ def main():
         ReadCaption(),
         Search(),
         DownloadVidoes(),
+        EditVideo(),
         Postflight(),
         ]
 

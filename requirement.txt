@@ -1,2 +1,0 @@
-python-dotenv==0.17.0
-pytube==10.7.1
